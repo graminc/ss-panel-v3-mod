@@ -4,6 +4,7 @@ gitdir='git仓库配置目录'
 webdir='网站目录'
 githubadr='git@github.com:your_username/ss-panel-v3-mod.git'
 cd $gitdir
+git fetch upstream
 git merge upstream/master
 git push origin master
 cd $webdir
