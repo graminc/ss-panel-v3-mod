@@ -142,14 +142,25 @@ class Job
 			}
 		}
 
+		if (date("d") == 15){
 		NodeInfoLog::where("log_time","<",time()-86400*3)->delete();
-		NodeOnlineLog::where("log_time","<",time()-86400*3)->delete();
-		TrafficLog::where("log_time","<",time()-86400*3)->delete();
-		DetectLog::where("datetime","<",time()-86400*3)->delete();
+		NodeOnlineLog::where("log_time","<",time()-86400*3)->delete();;
+		TrafficLog::where("log_time","<",time()-86400*3)->delete();;
+		DetectLog::where("datetime","<",time()-86400*3)->delete();;
 		Telegram::Send("姐姐姐姐，数据库被清理了，感觉身体被掏空了呢~");
+		}
 
 
 		$users = User::all();
+ 		$user_class_reset_all_bandwidth = Config::get('reg_auto_reset_bandwidth');
+ 		$user_class0_bandwidth = Config::get('reg_auto_reset_class0_bandwidth');
+ 		$user_class1_bandwidth = Config::get('reg_auto_reset_class1_bandwidth');
+ 		$user_class2_bandwidth = Config::get('reg_auto_reset_class2_bandwidth');
+ 		$user_class3_bandwidth = Config::get('reg_auto_reset_class3_bandwidth');
+ 		$user_class4_bandwidth = Config::get('reg_auto_reset_class4_bandwidth');
+ 		$user_class5_bandwidth = Config::get('reg_auto_reset_class5_bandwidth');
+ 		$user_class6_bandwidth = Config::get('reg_auto_reset_class6_bandwidth');
+
         foreach($users as $user){
 
 			$user->last_day_t=($user->u+$user->d);
@@ -161,11 +172,39 @@ class Job
 				$user->u = 0;
 				$user->d = 0;
 				$user->last_day_t = 0;
-				$user->transfer_enable = $user->auto_reset_bandwidth*1024*1024*1024;
+				if ($user_class_reset_all_bandwidth != 0)
+			//此处会重置所有用户流量为config中设置的默认值。默认值为0则不重置。
+                       			{      
+						$user->transfer_enable = $user_class_reset_all_bandwidth*1024*1024*1024;}
+				if ($user->class == 0 && $user_class1_bandwidth != 0)
+                                        {
+                                                $user->transfer_enable = $user_class0_bandwidth*1024*1024*1024;}
+				if ($user->class == 1 && $user_class1_bandwidth != 0)
+                                        {
+                                                $user->transfer_enable = $user_class1_bandwidth*1024*1024*1024;}
+				if ($user->class == 2 && $user_class2_bandwidth != 0)
+                                        {
+                                                $user->transfer_enable = $user_class2_bandwidth*1024*1024*1024;}
+
+				if ($user->class == 3 && $user_class3_bandwidth != 0) 
+                                	{
+                                	        $user->transfer_enable = $user_class3_bandwidth*1024*1024*1024;}
+	
+				if ($user->class == 4 && $user_class4_bandwidth != 0)
+					{
+						$user->transfer_enable = $user_class4_bandwidth*1024*1024*1024;}
+
+				if ($user->class == 5 && $user_class5_bandwidth != 0)
+					{
+						$user->transfer_enable = $user_class5_bandwidth*1024*1024*1024;}
+				if ($user->class == 6 && $user_class6_bandwidth != 0) 
+					{
+						$user->transfer_enable = $user_class6_bandwidth*1024*1024*1024;}
+
+				
 				$user->save();
 			}
 		}
-
 
 
 		#https://github.com/shuax/QQWryUpdate/blob/master/update.php
@@ -210,8 +249,8 @@ class Job
 			unlink(BASE_PATH."/storage/qqwry.dat");
 			rename(BASE_PATH."/storage/qqwry.dat.bak",BASE_PATH."/storage/qqwry.dat");
 		}
-		
-		
+
+
 
 		if(Config::get('enable_auto_backup') == 'true')
 		{
@@ -219,6 +258,8 @@ class Job
 		}
 
 		Job::updatedownload();
+
+
 
 	}
 
@@ -445,7 +486,7 @@ class Job
 
 					}
 
-					Telegram::Send("姐姐姐姐，面板程序有更新了呢~看看你的邮箱吧~");
+//					Telegram::Send("姐姐姐姐，面板程序有更新了呢~看看你的邮箱吧~");
 
 					$myfile = fopen(BASE_PATH."/storage/update.md5", "w+") or die("Unable to open file!");
 					$txt = "1";
@@ -699,7 +740,7 @@ class Job
 
 					$subject = Config::get('appName')."-您的用户账户已经被删除了";
 					$to = $user->email;
-					$text = "您好，系统发现您的账号已经过期 ".Config::get('enable_account_expire_delete_days')." 天了，帐号已经被删除。" ;
+					$text = "您好，系统发现您的账号已经过期 ".Config::get('enable_account_expire_delete_days')." 天了，账户余额为".$user->money."，帐号已经被删除。" ;
 					try {
 						Mail::send($to, $subject, 'news/warn.tpl', [
 							"user" => $user,"text" => $text
@@ -724,14 +765,14 @@ class Job
 
 
 
-			if((int)Config::get('enable_auto_clean_uncheck_days')!=0 && max($user->last_check_in_time,strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_uncheck_days')*86400) < time() && $user->class == 0)
+			if((int)Config::get('enable_auto_clean_uncheck_days')!=0 && max($user->last_check_in_time,strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_uncheck_days')*86400) < time() && $user->class == 0 && $user->money == 0)
 			{
 				if(Config::get('enable_auto_clean_uncheck')=='true')
 				{
 
 					$subject = Config::get('appName')."-您的用户账户已经被删除了";
 					$to = $user->email;
-					$text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_uncheck_days')." 天没签到了，帐号已经被删除。" ;
+					$text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_uncheck_days')." 天没签到了，账户余额为".$user->money."，帐号已经被删除。" ;
 					try {
 						Mail::send($to, $subject, 'news/warn.tpl', [
 							"user" => $user,"text" => $text
@@ -755,14 +796,14 @@ class Job
 			}
 
 
-			if((int)Config::get('enable_auto_clean_unused_days')!=0 && max($user->t,strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_unused_days')*86400) < time() && $user->class == 0)
+			if((int)Config::get('enable_auto_clean_unused_days')!=0 && max($user->t,strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_unused_days')*86400) < time() && $user->class == 0 && $user->money == 0)
 			{
 				if(Config::get('enable_auto_clean_unused')=='true')
 				{
 
 					$subject = Config::get('appName')."-您的用户账户已经被删除了";
 					$to = $user->email;
-					$text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_unused_days')." 天没使用了，帐号已经被删除。" ;
+					$text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_unused_days')." 天没使用了，账户余额为".$user->money."，帐号已经被删除。" ;
 					try {
 						Mail::send($to, $subject, 'news/warn.tpl', [
 							"user" => $user,"text" => $text

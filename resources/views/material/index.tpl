@@ -24,7 +24,7 @@
 								<div class="card">
 									<div class="card-main">
 										<div class="card-inner">
-											<p>请问您今天要来点兔子吗？</p>
+											<p>快到碗里来！</p>
 										</div>
 									</div>
 								</div>
@@ -55,7 +55,7 @@
 										<div class="card-inner">
 											<p class="card-heading">注册</p>
 											<p>
-												没有账户？点击按钮注册一个。
+												没有账户？赶紧来注册吧！
 											</p>
 										</div>
 										<div class="card-action">
@@ -73,7 +73,7 @@
 										<div class="card-inner">
 											<p class="card-heading">登录</p>
 											<p>
-												有账户了？点击登录。
+												来来来，愉快地玩耍吧！
 											</p>
 										</div>
 										<div class="card-action">

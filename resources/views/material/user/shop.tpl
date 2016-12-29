@@ -24,9 +24,12 @@
 					
 					<div class="card">
 						<div class="card-main">
-							<div class="card-inner">
-								<p>系统中所有商品的列表。您购买等级类的商品时有效期会从当前时间开始计算。</p>
-								<p>当前余额：{$user->money} 元</p>
+							<div class="card-inner alert alert-warning" role="alert">
+								<b>系统中所有商品的列表。您购买等级类的商品时有效期会从当前时间开始计算。</b>
+								<p><font color="red">商品说明：(请务必仔细阅读)</font></p>
+								<p><font color="red">1.购买套餐后，流量会立即重置为当前套餐流量，并从当前时间开始计算套餐周期。</font></p>
+								<p><font color="red">2.请勿重复购买不同套餐，流量并不会叠加.需要更换套餐请先在购买记录中退订已购套餐。(未选自动续费不需退订)</font></p>
+								<h4><p class="label label-danger">当前余额：{$user->money} 元</p></h4>
 							</div>
 						</div>
 					</div>

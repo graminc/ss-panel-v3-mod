@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 {include file='user/main.tpl'}
 
 
@@ -21,19 +14,21 @@
 		<div class="container">
 			<section class="content-inner margin-top-no">
 				<div class="row">
-					<div class="col-lg-12 col-md-12">
-						<div class="card margin-bottom-no">
-							<div class="card-main">
-								<div class="card-inner">
-									<h4>注意!</h4>
-									<p>请勿在任何地方公开节点地址！</p>
-									<p>流量比例为0.5即使用1000MB按照500MB流量记录记录结算.</p>
-									<a href="javascript:void(0);" onClick="urlChange('guide',0,0,0)">如果您不知道如何查看节点的详细信息和二维码，请点我。</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                                        <div class="col-lg-12 col-md-12">
+                                                <div class="card margin-bottom-no">
+                                                        <div class="card-main">
+                                                                <div class="card-inner alert alert-warning" role="alert">
+                                                                        <h3>注意事项!</h3>
+                                                                        <h4><p class="label label-danger">请勿在任何地方
+公开节点地址！</p></h4>
+                                                                        <p>流量比例为0.5即使用1000MB按照500MB流量记录记>录结算.</p>
+                                                                        <a href="javascript:void(0);" onClick="urlChange('guide',0,0,0)">如果您不知道如何查看节点的详细信息和二维码，请点我。</a>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                 </div>
+
 				<div class="ui-card-wrap">
 					<div class="row">
 						<div class="col-lg-12 col-sm-12">
@@ -498,9 +493,7 @@
 																	<script>
 																	$().ready(function(){
 																		$('#heading{$node_order->$prefix}').on("shown.bs.tile", function() {
-
 																			$("#info{$id}").load("/user/node/{$point_node->id}/ajax");
-
 																		});
 																	});
 																	</script>
@@ -552,8 +545,6 @@
 
 
 <script>
-
-
 function urlChange(id,is_mu,rule,relay_node_id) {
     var site = './node/'+id+'?ismu='+is_mu+'&relay_rule='+rule+"&relay_node_id="+relay_node_id;
 	if(id == 'guide')

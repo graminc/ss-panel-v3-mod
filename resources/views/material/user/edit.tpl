@@ -42,7 +42,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="pwd-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="pwd-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
@@ -63,7 +63,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="ss-pwd-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="ss-pwd-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
@@ -106,7 +106,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="method-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="method-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
@@ -155,7 +155,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="wechat-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="wechat-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
@@ -216,7 +216,7 @@
 
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="rss-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="rss-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
@@ -231,7 +231,7 @@
 
 
 
-						<div class="card margin-bottom-no">
+<!--						<div class="card margin-bottom-no">
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
@@ -249,13 +249,13 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="theme-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="theme-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
+-->
 					</div>
 
 
@@ -271,7 +271,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="unblock" ><span class="icon">check</span>&nbsp;解封</button>
+											<button class="btn btn-success waves-attach" id="unblock" ><span class="icon">check</span>&nbsp;解封</button>
 										</div>
 									</div>
 								</div>
@@ -297,7 +297,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="mail-update" ><span class="icon">check</span>&nbsp;提交</button>
+											<button class="btn btn-success waves-attach" id="mail-update" ><span class="icon">check</span>&nbsp;提交</button>
 										</div>
 									</div>
 								</div>
@@ -342,9 +342,9 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<a class="btn btn-brand-accent btn-flat waves-attach" href="/user/gareset" ><span class="icon">format_color_reset</span>&nbsp;重置</a>
-											<button class="btn btn-flat waves-attach" id="ga-test" ><span class="icon">extension</span>&nbsp;测试</button>
-											<button class="btn btn-brand btn-flat waves-attach" id="ga-set" ><span class="icon">perm_data_setting</span>&nbsp;设置</button>
+											<a class="btn btn-brand-accent btn-success waves-attach" href="/user/gareset" ><span class="icon">format_color_reset</span>&nbsp;重置</a>
+											<button class="btn btn-success waves-attach" id="ga-test" ><span class="icon">extension</span>&nbsp;测试</button>
+											<button class="btn btn-brand btn-success waves-attach" id="ga-set" ><span class="icon">perm_data_setting</span>&nbsp;设置</button>
 										</div>
 									</div>
 								</div>
@@ -359,11 +359,12 @@
 										<p>当前端口：{$user->port}</p>
 
 									</div>
-									<div class="card-action">
+<!--									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="portreset" ><span class="icon">check</span>&nbsp;重置端口</button>
+											<button class="btn btn-success waves-attach" id="portreset" ><span class="icon">check</span>&nbsp;重置端口</button>
 										</div>
 									</div>
+-->
 								</div>
 							</div>
 						</div>
@@ -382,7 +383,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="setpac" ><span class="icon">check</span>&nbsp;设置</button>
+											<button class="btn btn-success waves-attach" id="setpac" ><span class="icon">check</span>&nbsp;设置</button>
 										</div>
 									</div>
 								</div>

@@ -145,7 +145,9 @@ class Shop extends Model
 					}
 					else
 					{
-						$user->expire_in=date("Y-m-d H:i:s",strtotime($user->expire_in)+$value*86400);
+//						$user->expire_in=date("Y-m-d H:i:s",strtotime($user->expire_in)+$value*86400);
+//设置账号过期时间为系统时间+商品设定时间+30天
+						$user->expire_in=date("Y-m-d H:i:s",time()+$value*86400+30*86400);
 					}
 					break;
 				case "class":
@@ -153,7 +155,9 @@ class Shop extends Model
 					{
 						$user->class_expire=date("Y-m-d H:i:s",time());
 					}
-					$user->class_expire=date("Y-m-d H:i:s",strtotime($user->class_expire)+$content["class_expire"]*86400);
+//					$user->class_expire=date("Y-m-d H:i:s",strtotime($user->class_expire)+$content["class_expire"]*86400);
+//设置等级过期时间为系统时间+商品设定增加过期时间
+					$user->class_expire=date("Y-m-d H:i:s",time()+$content["class_expire"]*86400);
 					$user->class=$value;
 					break;
 				default:

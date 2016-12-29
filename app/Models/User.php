@@ -51,6 +51,15 @@ class User extends Model
         }
         return Tools::toDateTime($this->attributes['t']);
     }
+//新增功能 如果等级为0则显示账号受限。其它显示账号等级
+     public function show_level($level)
+    {       
+        if ($level == 0) {
+            return "0，您的账号只能使用部分服务。";
+        }
+        return "$level";  
+    }
+
 
     public function getMuMd5()
     {
@@ -194,7 +203,7 @@ class User extends Model
     public function getGAurl()
     {
         $ga = new GA();
-        $url = $ga->getUrl(urlencode(Config::get('appName')."-".$this->attributes['user_name']."-两步验证码"),$this->attributes['ga_token']);
+       $url = $ga->getUrl(urlencode(Config::get('appName')."-".$this->attributes['user_name']."-两步验证码"),$this->attributes['ga_token']);
         return $url;
     }
 

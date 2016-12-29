@@ -10,7 +10,7 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">登录到用户中心</h1>
+										<h1 class="card-heading text-center">登录到用户中心</h1>
 									</div>
 								</div>
 								<div class="card-inner">

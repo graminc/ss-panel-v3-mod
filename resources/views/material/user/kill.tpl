@@ -53,7 +53,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="kill" ><span class="icon">check</span>&nbsp;删除我的帐号</button>
+											<button class="btn btn-danger waves-attach" id="kill" ><span class="icon">check</span>&nbsp;删除我的帐号</button>
 										</div>
 									</div>
 								</div>

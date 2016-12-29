@@ -13,8 +13,19 @@
 	<link href="/theme/material/css/base.min.css" rel="stylesheet">
 	<link href="/theme/material/css/project.min.css" rel="stylesheet">
 	<link href="//fonts.lug.ustc.edu.cn/icon?family=Material+Icons" rel="stylesheet">
-	
+<!--
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 	
 	<!-- favicon -->
 	<!-- ... -->
@@ -191,7 +202,10 @@
 	
 	
 </head>
+<!--
 <body class="page-orange">
+-->
+<body class="page-brand">
 	<header class="header header-orange header-transparent header-waterfall ui-header">
 		<ul class="nav nav-list pull-left">
 			<div>
@@ -337,6 +351,11 @@
 						
 						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">交易</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_help">
+<li font color="red">
+								<a href="https://salecard.zhaopay.com.cn/Buy/DE94B852323F966899CBE655C3B86D8B" target="_blank">
+									<font color="red"><i class="icon icon-lg">card_giftcard</i>&nbsp购买充值码</font>
+								</a>
+							<li>
 						
 						
 							<li>

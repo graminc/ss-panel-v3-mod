@@ -12,7 +12,7 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">和我签订契约，成为魔法少女吧。</h1>
+										<h1 class="card-heading text-center">和我签订契约，成为魔法少女吧。</h1>
 									</div>
 								</div>
 								<div class="card-inner">

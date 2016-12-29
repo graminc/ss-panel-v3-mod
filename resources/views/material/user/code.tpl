@@ -41,7 +41,7 @@
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;充值</button>
+											<button class="btn btn-success waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;充值</button>
 										</div>
 									</div>
 								</div>

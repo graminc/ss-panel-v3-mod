@@ -580,7 +580,7 @@ class UserController extends BaseController
         return $response->getBody()->write(json_encode($res));
     }
 	
-	public function ResetPort($request, $response, $args)
+/*	public function ResetPort($request, $response, $args)
     {
 		
 		$user = $this->user;
@@ -593,6 +593,7 @@ class UserController extends BaseController
 		$res['msg'] = "设置成功，新端口是".$user->port;
         return $response->getBody()->write(json_encode($res));
     }
+*/	
 	
 	public function GaReset($request, $response, $args)
 	{
@@ -1771,7 +1772,7 @@ class UserController extends BaseController
         return $this->echoJson($response, $res);
     }
 	
-	public function updateTheme($request, $response, $args)
+/*	public function updateTheme($request, $response, $args)
     {
         $theme = $request->getParam('theme');
         
@@ -1791,6 +1792,7 @@ class UserController extends BaseController
         $res['msg'] = "ok";
         return $this->echoJson($response, $res);
     }
+*/
 	
 	
 	public function updateMail($request, $response, $args)
@@ -1915,6 +1917,9 @@ class UserController extends BaseController
         $traffic = rand(Config::get('checkinMin'), Config::get('checkinMax'));
         $this->user->transfer_enable = $this->user->transfer_enable + Tools::toMB($traffic);
         $this->user->last_check_in_time = time();
+//修改签到规则。等级为0的签到会增加15天使用期。
+        if($this->user->class == 0 && Config::get('user_expire_in_checkin') != 0) {
+        $this->user->expire_in=date("Y-m-d H:i:s",time()+Config::get('user_expire_in_checkin')*86400);}
         $this->user->save();
         $res['msg'] = sprintf("获得了 %u MB流量.", $traffic);
         $res['ret'] = 1;
@@ -1982,3 +1987,4 @@ class UserController extends BaseController
 		return $this->view()->assign('logs',$logs)->display('user/detect_log.tpl');
 	}
 }
+

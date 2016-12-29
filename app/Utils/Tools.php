@@ -153,7 +153,7 @@ class Tools
 		}
 		return true;
 	}
-
+	
 	public static function is_relay_rule_avaliable($rule, $ruleset, $node_id)
 	{
 		$cur_id = $rule->id;
@@ -170,8 +170,7 @@ class Tools
 		{
 			return False;
 		}
-		
+				return True;
 		return True;
 	}
-	
 }
