@@ -1,0 +1,9 @@
+30 22 * * * php /home/wwwroot/ssr.huyal.com/xcat sendDiaryMail 
+*/1 * * * * php /home/wwwroot/ssr.huyal.com/xcat synclogin
+*/1 * * * * php /home/wwwroot/ssr.huyal.com/xcat syncvpn
+0 0 * * * php -n /home/wwwroot/ssr.huyal.com/xcat dailyjob
+*/1 * * * * php /home/wwwroot/ssr.huyal.com/xcat checkjob    
+*/1 * * * * php -n /home/wwwroot/ssr.huyal.com/xcat syncnas
+MAILTO=""
+0 1 * * * /root/backup.sh
+*/30 * * * * /root/sqlbackup.sh
