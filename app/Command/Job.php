@@ -142,13 +142,13 @@ class Job
 			}
 		}
 
-		if (date("d") == 15){
+//		if (date("d") == 15){
 		NodeInfoLog::where("log_time","<",time()-86400*3)->delete();
 		NodeOnlineLog::where("log_time","<",time()-86400*3)->delete();;
 		TrafficLog::where("log_time","<",time()-86400*3)->delete();;
 		DetectLog::where("datetime","<",time()-86400*3)->delete();;
 		Telegram::Send("姐姐姐姐，数据库被清理了，感觉身体被掏空了呢~");
-		}
+//		}
 
 
 		$users = User::all();
