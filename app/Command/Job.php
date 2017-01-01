@@ -211,7 +211,7 @@ class Job
 					{
 				$user->u = 0;
 				$user->d = 0;
-				$user->last_day_t = u;
+				$user->last_day_t = 0;
 		                $user->transfer_enable = $user_class5_bandwidth*1024*1024*1024}
 			if ($user->class == 6 && $user_class6_bandwidth != 0) 
 					{
