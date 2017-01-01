@@ -169,37 +169,55 @@ class Job
 
 			if(date("d") == $user->auto_reset_day)
 			{
+//				$user->u = 0;
+//				$user->d = 0;
+//				$user->last_day_t = 0;
+				if ($user_class_reset_all_bandwidth != 0)
+			//此处会重置所有用户流量为config中设置的默认值。默认值为0则不重置。
+				if ($user->class == 0 && $user_class1_bandwidth != 0)
+                                        {
 				$user->u = 0;
 				$user->d = 0;
 				$user->last_day_t = 0;
-				if ($user_class_reset_all_bandwidth != 0)
-			//此处会重置所有用户流量为config中设置的默认值。默认值为0则不重置。
-                       			{      
-						$user->transfer_enable = $user_class_reset_all_bandwidth*1024*1024*1024;}
-				if ($user->class == 0 && $user_class1_bandwidth != 0)
-                                        {
-                                                $user->transfer_enable = $user_class0_bandwidth*1024*1024*1024;}
+                                $user->transfer_enable = $user_class0_bandwidth*1024*1024*1024;}
 				if ($user->class == 1 && $user_class1_bandwidth != 0)
                                         {
-                                                $user->transfer_enable = $user_class1_bandwidth*1024*1024*1024;}
+				$user->u = 0;
+				$user->d = 0;
+				$user->last_day_t = 0;
+                                $user->transfer_enable = $user_class1_bandwidth*1024*1024*1024;}
 				if ($user->class == 2 && $user_class2_bandwidth != 0)
                                         {
-                                                $user->transfer_enable = $user_class2_bandwidth*1024*1024*1024;}
+				$user->u = 0;
+				$user->d = 0;
+				$user->last_day_t = 0;
+                                $user->transfer_enable = $user_class2_bandwidth*1024*1024*1024;}
 
 				if ($user->class == 3 && $user_class3_bandwidth != 0) 
                                 	{
-                                	        $user->transfer_enable = $user_class3_bandwidth*1024*1024*1024;}
+				$user->u = 0;
+				$user->d = 0;
+				$user->last_day_t = 0;
+                                $user->transfer_enable = $user_class3_bandwidth*1024*1024*1024;}
 	
 				if ($user->class == 4 && $user_class4_bandwidth != 0)
 					{
-						$user->transfer_enable = $user_class4_bandwidth*1024*1024*1024;}
+				$user->u = 0;
+				$user->d = 0;
+				$user->last_day_t = 0;
+		               $user->transfer_enable = $user_class4_bandwidth*1024*1024*1024;}
 
 				if ($user->class == 5 && $user_class5_bandwidth != 0)
-					{
-						$user->transfer_enable = $user_class5_bandwidth*1024*1024*1024;}
+					{			           $user->transfer_enable = $user_class5_bandwidth*1024*1024*1024;}
+				$user->u = 0;
+				$user->d = 0;
+				$user->last_day_t = 0;
 				if ($user->class == 6 && $user_class6_bandwidth != 0) 
 					{
-						$user->transfer_enable = $user_class6_bandwidth*1024*1024*1024;}
+				$user->u = 0;
+				$user->d = 0;
+				$user->last_day_t = 0;
+	                       $user->transfer_enable = $user_class6_bandwidth*1024*1024*1024;}
 
 				
 				$user->save();
